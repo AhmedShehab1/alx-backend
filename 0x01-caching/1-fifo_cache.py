@@ -14,7 +14,7 @@ class FIFOCache(BaseCaching):
     """
     def __init__(self):
         """Constructor
-        """        
+        """
         super().__init__()
 
     def put(self, key, item):
@@ -30,4 +30,3 @@ class FIFOCache(BaseCaching):
     def get(self, key):
         """Get an item by key"""
         return self.cache_data.get(key)
-

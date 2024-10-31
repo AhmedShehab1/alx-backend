@@ -23,10 +23,10 @@ class LIFOCache(BaseCaching):
             self.cache_data[key] = item
 
         if len(self.cache_data) > LIFOCache.MAX_ITEMS:
-            popped_key = self.cache_data.popitem()[0]
+            popped_key = list(self.cache_data.keys())[-2]
+            del self.cache_data[popped_key]
             print(f"DISCARD: {popped_key}")
 
     def get(self, key):
         """Get an item by key"""
         return self.cache_data.get(key)
-
